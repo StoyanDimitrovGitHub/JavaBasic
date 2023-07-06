@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class SuppliesforSchool {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int packadgesPen = Integer.parseInt(scanner.nextLine());
+        int packadgesMarker = Integer.parseInt(scanner.nextLine());
+        int LtPreparat = Integer.parseInt(scanner.nextLine());
+        double discount = Integer.parseInt(scanner.nextLine());
+
+        double packadgesPenPrice = 5.80 * packadgesPen;
+        double packadgesMarkerPrice = 7.20 * packadgesMarker;
+        double LtPreparatPrice = 1.20 * LtPreparat;
+        double numberToProcent = (discount / 100) ;
+
+        double TotalPrice = packadgesPenPrice +packadgesMarkerPrice + LtPreparatPrice;
+        double TotalDiscount = TotalPrice - (TotalPrice * numberToProcent );
+
+        System.out.println(TotalDiscount);
+
+    }
+}

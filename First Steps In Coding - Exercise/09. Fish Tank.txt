@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class FsihTank {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int lenght = Integer.parseInt(scanner.nextLine());
+        int widht = Integer.parseInt(scanner.nextLine());
+        int high = Integer.parseInt(scanner.nextLine());
+        double procents = Double.parseDouble(scanner.nextLine());
+
+        double obem = lenght * widht * high;
+        double obemInLt = obem /1000 ;
+        double spaceTaken = procents * 0.01;
+
+        double LtNeeded = obemInLt * (1-spaceTaken);
+
+        System.out.println(LtNeeded);
+
+        }
+    }

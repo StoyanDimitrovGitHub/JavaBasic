@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class BasketballEquipment {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int TaxPerYear = Integer.parseInt(scanner.nextLine());
+
+        double  shoes = TaxPerYear - (TaxPerYear * 0.40);
+        double cloths = shoes - (shoes*0.20);
+        double ball = cloths / 4;
+        double acessoaries = ball /5;
+
+        double Total = TaxPerYear+ shoes +cloths + ball + acessoaries;
+
+        System.out.println(Total);
+    }
+}

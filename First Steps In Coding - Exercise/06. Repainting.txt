@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Repainting {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int pcsNailon = Integer.parseInt(scanner.nextLine());
+        int paintLt = Integer.parseInt(scanner.nextLine());
+        int razreditelLt = Integer.parseInt(scanner.nextLine());
+        int workingHours = Integer.parseInt(scanner.nextLine());
+
+        double nailonPrice = (pcsNailon + 2) * 1.50;
+        double paintPrice = (paintLt + paintLt*0.10) * 14.50;
+        double razreditelPrice = razreditelLt * 5;
+        double bags = 0.40;
+
+        double paymentPerHour = (nailonPrice + paintPrice + razreditelPrice + bags) * 0.30;
+        double totalForWork = workingHours * paymentPerHour;
+        double  totalMaterials = nailonPrice + paintPrice + razreditelPrice + bags;
+
+
+        Double Total = totalMaterials + totalForWork;
+
+        System.out.println(Total);
+
+
+        }
+
+    }
