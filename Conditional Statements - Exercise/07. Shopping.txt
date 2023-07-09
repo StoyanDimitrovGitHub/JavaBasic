@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Shopping {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double budget = Double.parseDouble(scanner.nextLine());
+        int VideoPcs = Integer.parseInt(scanner.nextLine());
+        int ProcessorPcs = Integer.parseInt(scanner.nextLine());
+        int RamPcs = Integer.parseInt(scanner.nextLine());
+
+        double VideoPrice = 250;
+        double Videosum = VideoPcs * VideoPrice;
+        double ProcessorPrice = 0.35 * Videosum;
+        double RamPrice = 0.10 * Videosum;
+
+        double TotalNeededSum = Videosum + (ProcessorPcs * ProcessorPrice) + (RamPrice * RamPcs);
+
+
+        if (VideoPcs > ProcessorPcs) {
+            //15% otstypka ot total sum
+            TotalNeededSum = TotalNeededSum * 0.85;
+        }
+
+        if (budget >=TotalNeededSum){
+            System.out.printf("You have %.2f leva left!", budget - TotalNeededSum);
+        } else {
+            System.out.printf("Not enough money! You need %.2f leva more!", Math.abs(budget - TotalNeededSum));
+        }
+
+    }
+}

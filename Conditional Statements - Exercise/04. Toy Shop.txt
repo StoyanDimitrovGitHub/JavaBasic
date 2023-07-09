@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Condition04ToyShop {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        double ekskpr = Double.parseDouble(scanner.nextLine());
+        int brpuzeli = Integer.parseInt(scanner.nextLine());
+        int brkukli = Integer.parseInt(scanner.nextLine());
+        int brbears = Integer.parseInt(scanner.nextLine());
+        int brminions = Integer.parseInt(scanner.nextLine());
+        int brkamion = Integer.parseInt(scanner.nextLine());
+
+        double puzelpr = 2.60;
+        int dollpr = 3;
+        double prbear = 4.10;
+        double prminion = 8.20;
+        int prkamion = 2;
+
+        double profit = (brpuzeli * puzelpr) + (brkukli * dollpr) + (brbears * prbear) + (brminions * prminion) + (brkamion * prkamion);
+        double pcorder = brpuzeli + brkamion + brkukli + brminions + brbears;
+
+        if (pcorder >= 50) {
+            profit = profit - (profit * 0.25);
+        }
+        double naem = profit * 0.1;
+        double totalProfit = profit - naem;
+        double moneyleft = totalProfit - ekskpr;
+
+        if (totalProfit >= ekskpr) {
+
+            System.out.printf("Yes! %.2f lv left.", moneyleft);
+        } else {
+            System.out.printf("Not enough money! %.2f lv needed.", ekskpr - totalProfit);
+        }
+
+
+
+    }
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Condition05GodzKong {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        double movieBudget = Double.parseDouble(scanner.nextLine());
+        int internspc = Integer.parseInt(scanner.nextLine());
+        double outfitpr1 = Double.parseDouble(scanner.nextLine());
+        double outfitpr = outfitpr1 * internspc;
+        double decorpr = movieBudget * 0.1;
+
+    if (internspc > 150) {
+        outfitpr = outfitpr - (outfitpr * 0.1);
+    }
+
+    if ((decorpr + outfitpr) > movieBudget) {
+        System.out.println("Not enough money!");
+        System.out.printf("Wingard needs %.2f leva more.", (decorpr + outfitpr) - movieBudget);
+    } else {
+        System.out.println("Action!");
+        System.out.printf("Wingard starts filming with %.2f leva left.", movieBudget - (decorpr + outfitpr));
+    }
+    }
+}
