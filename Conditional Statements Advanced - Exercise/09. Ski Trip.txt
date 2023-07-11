@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class SkiTrip2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int nights = Integer.parseInt(scanner.nextLine());
+        String typeRoom = scanner.nextLine();
+        String grade = scanner.nextLine();
+
+        int actualNights = nights- 1;
+        double roomPrice = 0;
+        double totalPrice = 0;
+
+
+        switch (typeRoom) {
+            case "room for one person":
+                roomPrice = 18;
+                totalPrice = roomPrice * actualNights;
+
+                break;
+            case    "apartment":
+                roomPrice = 25;
+                totalPrice = actualNights * roomPrice;
+                if (actualNights < 10) {
+                    totalPrice = totalPrice * 0.70;
+                } else if (actualNights > 10 && actualNights <=15) {
+                    totalPrice = totalPrice * 0.65;
+
+                } else if (actualNights > 15 ) {
+                    totalPrice = totalPrice * 0.50;
+                    
+                }
+
+                break;
+            case    "president apartment":
+                roomPrice = 35;
+                totalPrice = actualNights * roomPrice;
+                if (actualNights < 10) {
+                    totalPrice = totalPrice * 0.90;
+                    } else if (actualNights > 10 && actualNights <=15) {
+                    totalPrice = totalPrice * 0.85;
+
+                } else if (actualNights > 15 ) {
+                    totalPrice = totalPrice * 0.80;
+
+                }
+
+                break;
+
+
+        }
+        if (grade.equals("positive")) {
+            totalPrice = totalPrice * 1.25;
+        } else if (grade.equals("negative")) {
+            totalPrice = totalPrice * 0.90;
+
+        }
+        System.out.printf("%.2f",totalPrice);
+    }
+}

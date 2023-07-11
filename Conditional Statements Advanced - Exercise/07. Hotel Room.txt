@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class HotelRoom2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String month = scanner.nextLine();
+        int totalNights = Integer.parseInt(scanner.nextLine());
+
+        double priceApartment = 0;
+        double priceStudio = 0;
+        double totalPriceA = 0.0;
+        double totalPriceS = 0.0;
+
+        switch (month) {
+
+            case "May":
+            case "October":
+                priceApartment = 65;
+                priceStudio = 50;
+                 totalPriceA = totalNights * priceApartment;
+                 totalPriceS = totalNights * priceStudio;
+                if (totalNights > 7 && totalNights <= 13) {
+                    totalPriceS = totalPriceS * 0.95;
+
+                } else if (totalNights > 14) {
+                    totalPriceS = totalPriceS * 0.70;
+                    totalPriceA = totalPriceA * 0.90;
+
+                }
+
+
+                break;
+            case "June":
+            case "September":
+                priceApartment = 68.70;
+                priceStudio = 75.20;
+                 totalPriceA = totalNights * priceApartment;
+                 totalPriceS = totalNights * priceStudio;
+
+                 if (totalNights > 14) {
+                     totalPriceS = totalPriceS * 0.80;
+                     totalPriceA = totalPriceA * 0.90;
+
+                 }
+
+                break;
+            case "July":
+            case "August":
+                priceApartment = 77;
+                priceStudio = 76;
+                totalPriceA = totalNights * priceApartment;
+                totalPriceS = totalNights * priceStudio;
+
+                if (totalNights > 14) {
+                    totalPriceA = totalPriceA * 0.90;
+                }
+
+                break;
+        }
+        System.out.printf("Apartment: %.2f lv.%n",totalPriceA);
+        System.out.printf("Studio: %.2f lv.",totalPriceS);
+    }
+}
